@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-int h, m, s, total, hf, mf, sf;
+int h, m, s, total;
 
 int main(){
     cin >> h >> m >> s >> total;

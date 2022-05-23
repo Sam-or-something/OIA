@@ -4,8 +4,7 @@ using namespace std;
 
 int a, b, suma;
 int main(){
-    cin >> a;
-    cin >> b;
+    cin >> a >> b;
     suma = a + b;
     cout << suma;
 }
