@@ -2,35 +2,36 @@
 #include <string>
 using namespace std;
 
-int h, m, s, total;
+int h, m, sec, total, m2, sec2;
 
 int main(){
-    cin >> h >> m >> s >> total;
-
+    cin >> h >> m >> sec >> total;
+    
     if (total % 60 != 0){
-        for(int i = total; i % 60 != 0; i--){
-            total - 1;
-            s++;
-        }
-      if(s >= 60){
-        s-=60;
-        m+=1;
-      }
+        sec2 = total % 60;
+        sec += sec2;
+        total -= sec2;
     }
     total /= 60;
     if (total % 60 != 0){
-        for(int i = total; i % 60 != 0; i--){
-            total - 1;
-            m++;
-        }
-      if(m >= 60){
-        m-=60;
-        h+=1;
-      }
+        m2 = total % 60;
+        m += m2;
+        total -= m2;
     }
-    h += total / 60;
-    if(h > 24){
-        h -= 24;
+    total /= 60;
+    h += total;
+    
+    if(sec >= 60){
+        sec -= 60;
+        m ++;
     }
-    cout << h << " " << m << " " << s << endl;
+    if(m >= 60){
+        m -= 60;
+        h ++;
+    }
+    if(h >= 24){
+        h = h % 24;
+    }
+
+    cout << h << " " << m << " " << sec << endl;
 }
