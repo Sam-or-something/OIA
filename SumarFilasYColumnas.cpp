@@ -2,41 +2,37 @@
 #include <vector>
 using namespace std;
 
-int filas, columnas, sumaF, sumaC, num;
+int filas, columnas, suma, num;
 vector<vector<int>>lista;
 
 int main(){
     cin >> filas >> columnas;
     for(int i = 0; i < filas; i++){
+        vector<int> linia;
         for(int r = 0; r < columnas; r++){
-            cin >> lista[i][r];
+            int nro;
+            cin >> nro;
+            linia.push_back(nro);
         }
+        lista.push_back(linia);
     }
     
-    for(int i = 0; i < filas; i++){
-        sumaF = 0;
-        for(int r = 0; r < columnas; r++){
-            sumaF += lista[i][r];
+    for(auto linia : lista){
+        suma = 0;
+        for(auto nro : linia){
+            suma += nro;
         }
-        if(i == filas -1){
-            cout << sumaF << endl;
-        }
-        else{
-            cout << sumaF << " ";
-        }
+        cout << suma << " ";
     }
+    
+    cout << endl;
 
-    for(int i = 0; i < columnas; i++)
+    for(int i = 0; i < columnas; i ++)
     {
-        sumaC = 0;
-        for(int r = 0; r < filas; r++){
-            sumaC += lista[r][i];
+        suma = 0;
+        for(auto linia : lista){
+            suma += linia[i];
         }
-        if(i == columnas -1){
-            cout << sumaC << endl;
-        }
-        else{
-            cout << sumaC << " ";
-        }   
+        cout << suma << " ";
     }
 }
