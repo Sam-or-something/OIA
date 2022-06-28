@@ -1,0 +1,6 @@
+using namespace std;
+
+long long suma(int a, int b)
+{
+    return  (long long)a+b;
+}
